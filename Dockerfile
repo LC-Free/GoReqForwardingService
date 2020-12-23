@@ -1,8 +1,9 @@
 FROM golang
 VOLUME /var/log/service
-COPY src /go/src
-WORKDIR /go/src/goservice
+COPY fwdservice /fwdservice
+WORKDIR /fwdservice
+RUN go get gopkg.in/yaml.v2
 RUN go build
-ENTRYPOINT ./goservice
+ENTRYPOINT ./fwdservice
 EXPOSE 8000
 
