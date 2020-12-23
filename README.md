@@ -3,8 +3,7 @@ Request forwarding service leveraging go and docker
 
 Some public APIs constrain requests sent from frontend applications ( for example Quandl.com will block requests to their public APIs made from a frontend application ).
 
-In order to work around this contraint this service forwards the requests sent to it
-A baseUrl must be provided in the config.yaml file, this baseUrl is parsed by the go code and is used as the target to forward requests to.
+In order to work around this contraint this service forwards the requests sent to a certain localhost port to the desired public API as specified in the config.yaml's baseUrl parameter.
 
 The script can be run by simply building and running the main.go file ( `go build` followed by `./fwdservice` in the fwdservice directory ), 
 or using the Dockerfile found at the root. a simple usage example would be running `docker build -t fwdservice .` in the root directory of this repo,
